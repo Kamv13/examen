@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Swal from 'sweetalert2'
 
 function App() {
   const [values, setValues] = useState(['', '', '', '', ''])
@@ -12,11 +13,11 @@ function App() {
     total : '',
   })
 
-  const handleInputChange = (index, value) => {
-    const newValues = [...values]
-    newValues[index] = e.target.value
-    setValues(newValues)
-  }
+  const handleInputChange = (index, e) => {
+  const newValues = [...values]
+  newValues[index] = e.target.value
+  setValues(newValues)
+}
 
   const getDiscountPercent = (subtotal) => {
     if (subtotal >= 13000) return 40
